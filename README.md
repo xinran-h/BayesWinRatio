@@ -25,35 +25,36 @@ devtools::install_github("xinran-h/BayesWinRatio")
 
 The function OCC.Table is the core function to generate simulation data
 and evaluate the operating characteristics based on the simulation data.
-The user inputs are: \* N.sim: Number of simulations. \* N.max: Maximum
-number of patients to enroll. \* mu.trt: True mean for treatment arm
-(log). \* Sigma.trt: True variance for treatment arm (log). \* mu.ctrl:
-True mean for control arm (log). \* Sigma.ctrl: True variance for
-control arm (log). \* cens_upper: Upper limit for the censoring time.The
-censoring time is generated from Uniform(0, cens_upper). \* design: A
+The user inputs are: - N.sim: Number of simulations. - N.max: Maximum
+number of patients to enroll. - mu.trt: True mean for treatment arm
+(log). - Sigma.trt: True variance for treatment arm (log). - mu.ctrl:
+True mean for control arm (log). - Sigma.ctrl: True variance for control
+arm (log). - cens_upper: Upper limit for the censoring time.The
+censoring time is generated from Uniform(0, cens_upper). - design: A
 numeric value indicating the type of design. 1 = proposed design, 2 =
 time to recurrence design, 3= time to death design, 4 = time to first
-event design. \* cohort: Interim cohort. \* recruit.int: Recruitment
-interval. \* m0: Prior mean for mu.trt/mu.ctrl. \* L0: Prior variance
-for mu.trt/mu.ctrl. \* v0: For the proposed design, this is the prior
-degrees of freedom for Sigma.trt/Sigma.ctrl. For the traditional
-designs, v0/2 is the prior shape for Sigma.trt/Sigma.ctrl. \* S0:For the
-proposed design, this is the prior scale matrix for
-Sigma.trt/Sigma.ctrl. For the traditional designs, v0*S0/2 is the prior
-scale for Sigma.trt/Sigma.ctrl. * time_max: The upper limit for the
-recurrence and death time sampled from truncated normal. This will set
-the upper limit to to time_max rather than Inf. \* eta: A pre-specified
-lower bound of acceptable performance based on historical information.
-\* lambda: Cutoff parameter. \* thin_MCMC: Thinning degree. \* Niter:
-Number of iterations for gibbs sampler.
+event design. - cohort: Interim cohort. - recruit.int: Recruitment
+interval. - m0: Prior mean for mu.trt/mu.ctrl. - L0: Prior variance for
+mu.trt/mu.ctrl. - v0: For the proposed design, this is the prior degrees
+of freedom for Sigma.trt/Sigma.ctrl. For the traditional designs, v0/2
+is the prior shape for Sigma.trt/Sigma.ctrl. - S0:For the proposed
+design, this is the prior scale matrix for Sigma.trt/Sigma.ctrl. For the
+traditional designs, v0\*S0/2 is the prior scale for
+Sigma.trt/Sigma.ctrl. - time_max: The upper limit for the recurrence and
+death time sampled from truncated normal. This will set the upper limit
+to to time_max rather than Inf. - eta: A pre-specified lower bound of
+acceptable performance based on historical information. - lambda: Cutoff
+parameter. - thin_MCMC: Thinning degree. - Niter: Number of iterations
+for gibbs sampler.
 
-The output is a list with the following components: \* mysim1: A numeric
+The output is a list with the following components: - mysim1: A numeric
 vector. mysim1 = c(PRN, PEN, EN), where PRN is the average percentage of
 trials that are not stopped, PEN is the average percentage of early
 termination, and EN is the average number of patients.  
-\* mu: A numeric vector. mu = c(mu.trt,mu.ctrl). \* Sigma.trt: True
-covariance matrix for treatment arm (log). \* Sigma.ctrl: True
-covariance matrix for control arm (log). \* lambda: Cutoff parameter.
+- mu: A numeric vector. mu = c(mu.trt,mu.ctrl). - Sigma.trt: True
+covariance matrix for treatment arm (log), same as the input. -
+Sigma.ctrl: True covariance matrix for control arm (log), same as the
+input. - lambda: Cutoff parameter.
 
 ### Tuning lambda
 
