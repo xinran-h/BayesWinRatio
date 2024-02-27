@@ -79,7 +79,7 @@ A list with the following components:\tabular{ll}{
 }
 }
 \description{
-This is the main function used to generate simulation data, and evaluate the operating characteristics based on the simulation data.
+This is the main function of BayesWinRatio. This function first generates simulation data, perform Bayesian monitoring using this simulation data, and returns the operating characteristics of the Bayesian monitoring.
 Note that mclapply is used for parallel programming, which works on Unix-style operating systems.
 }
 \examples{
