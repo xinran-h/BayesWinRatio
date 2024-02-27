@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# test
+# BayesWinRatio
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -13,7 +13,7 @@ Endpoints”.
 
 ## Installation
 
-You can install the development version of test from
+You can install the development version of BayesWinRatio from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -136,28 +136,28 @@ using the lambda just calibrated.
 mu.death = c(log(2.5), log(3), log(3.5), log(4), log(4.5))
 #varying mu_death for treatment arm
 for (i in 1:length(mu.death)){
-
-result <- OCC.Table(N.sim = 10000,
-                    N.max = 100,
-                    mu.trt = c(log(2), mu.death[i]),
-                    Sigma.trt = matrix(c(1, 0.5, 0.5, 1), ncol=2, byrow = T),
-                    mu.ctrl= c(log(2), log(5)),
-                    Sigma.ctrl = matrix(c(1, 0.5, 0.5, 1), ncol=2, byrow = T), 
-                    cens_upper = 25,
-                    design = 1,
-                    cohort = c(40,60,80,100),
-                    recruit.int  = 0.25,
-                    m0 = c(0,0),
-                    L0 = diag(10^6, 2),
-                    v0 = 4,
-                    S0 = diag(10^(-6), 2),
-                    time_max = 40,
-                    eta = 1.5,
-                    lambda =  max_lambda,
-                    thin_MCMC = 5,
-                    Niter = 100000);       
- 
-saveRDS(result, paste0("~/simulation results/varying_death", i,".rds"))
-
+  
+  result <- OCC.Table(N.sim = 10000,
+                      N.max = 100,
+                      mu.trt = c(log(2), mu.death[i]),
+                      Sigma.trt = matrix(c(1, 0.5, 0.5, 1), ncol=2, byrow = T),
+                      mu.ctrl= c(log(2), log(5)),
+                      Sigma.ctrl = matrix(c(1, 0.5, 0.5, 1), ncol=2, byrow = T), 
+                      cens_upper = 25,
+                      design = 1,
+                      cohort = c(40,60,80,100),
+                      recruit.int  = 0.25,
+                      m0 = c(0,0),
+                      L0 = diag(10^6, 2),
+                      v0 = 4,
+                      S0 = diag(10^(-6), 2),
+                      time_max = 40,
+                      eta = 1.5,
+                      lambda =  max_lambda,
+                      thin_MCMC = 5,
+                      Niter = 100000);       
+  
+  saveRDS(result, paste0("~/simulation results/varying_death", i,".rds"))
+  
 }
 ```
