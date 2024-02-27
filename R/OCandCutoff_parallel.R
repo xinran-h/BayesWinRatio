@@ -1,6 +1,6 @@
 #' OCC.Table
 #' 
-#' This is the main function used to generate simulation data, and evaluate the operating characteristics and cutoff value based on the simulation data.
+#' This is the main function used to generate simulation data, and evaluate the operating characteristics based on the simulation data.
 #' Note that mclapply is used for parallel programming, which works on Unix-style operating systems.
 #' 
 #' @param N.sim   Number of simulations.
@@ -9,7 +9,7 @@
 #' @param Sigma.trt  True variance for treatment arm (log).
 #' @param mu.ctrl True mean for control arm (log).
 #' @param Sigma.ctrl True variance for control arm (log).
-#' @param cens_upper Upper limit for the censoring time.
+#' @param cens_upper Upper limit for the censoring time. The censoring time is generated from Uniform(0, cens_upper).
 #' @param design A numeric value indicating the type of design. 1 = proposed design, 2 = time to recurrence design, 3= time to death design, 4 = time to first event design.
 #' @param cohort  Interim cohort. 
 #' @param recruit.int = Recruitment interval.
