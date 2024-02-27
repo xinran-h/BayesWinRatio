@@ -1,0 +1,23 @@
+---
+title: "Introduction to BayesWinRatio"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(test)
+```
+
+# Introduction
+
+This package performs Bayesian monitoring Using the win ratio approach for the manuscript "The Win Ratio Approach in Bayesian Monitoring for Two-Arm Phase II Clinical Trial Designs with Multiple Time-to-Event Endpoints".
