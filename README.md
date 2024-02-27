@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package performs Bayesian monitoring Using the win ratio approach
+This package performs Bayesian monitoring using the win ratio approach
 based on the manuscript “The Win Ratio Approach in Bayesian Monitoring
 for Two-Arm Phase II Clinical Trial Designs with Multiple Time-to-Event
 Endpoints”.
