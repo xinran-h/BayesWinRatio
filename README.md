@@ -78,7 +78,9 @@ early termination (PET) at a desirable level (say, 0.1) under the null
 scenario. The following code uses a bisection method to find the lambda.
 
 ``` r
-library(test)
+library(BayesWinRatio)
+RNGkind("L'Ecuyer-CMRG")
+set.seed(126)
 
 # PET = 0.1 under the null scenario
 Cutoff2Prob <- 0.1 
@@ -132,6 +134,8 @@ We run the OCC_Table function to obtain the operating characteristics
 using the lambda just calibrated.
 
 ``` r
+RNGkind("L'Ecuyer-CMRG")
+set.seed(126)
 
 mu.death = c(log(2.5), log(3), log(3.5), log(4), log(4.5))
 #varying mu_death for treatment arm
