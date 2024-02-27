@@ -23,9 +23,10 @@ devtools::install_github("xinran-h/BayesWinRatio")
 
 ## BayesWinRatio in a nutshell
 
-The function OCC.Table is the core function to generate simulation data
-and evaluate the operating characteristics based on the simulation data.
-The user inputs are:
+The function OCC.Table is the core function of BayesWinRatio. This
+function first generates simulation data, perform Bayesian monitoring
+using this simulation data, and returns the operating characteristics of
+the Bayesian monitoring. The user inputs are:
 
 - N.sim: Number of simulations.
 - N.max: Maximum number of patients to enroll.
