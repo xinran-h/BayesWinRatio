@@ -1,0 +1,25 @@
+Package: test
+Type: Package
+Title: Performing Bayesian Monitoring Using the Win Ratio Approach
+Version: 1.0
+Date: 2024-02-26
+Authors@R: person(given = "Xinran",
+           family = "Huang",
+           role = c("aut", "cre"),
+           email = "huangxrtc@gmail.com",
+           comment = c(ORCID = "0000-0002-8126-9735"))
+Description: This package performs Bayesian monitoring Using the win ratio approach for the manuscript "The Win Ratio Approach in Bayesian Monitoring for Two-Arm Phase II Clinical Trial Designs with Multiple Time-to-Event Endpoints".
+License: MIT + file LICENSE
+Imports: 
+    MASS,
+    parallel,
+    Rcpp (>= 1.0.11),
+    stats,
+    survival
+LinkingTo: Rcpp, RcppDist, RcppArmadillo
+Encoding: UTF-8
+RoxygenNote: 7.3.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
